@@ -61,8 +61,8 @@ steps_by_day_i <- aggregate(steps ~ date, imputed_data, sum)
 hist(steps_by_day_i$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 
 #Create Histogram to show difference. 
-hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T)
-legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
+hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="green", xlab="Number of Steps", add=T)
+legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "green"), lwd=10)
 ```
 
 Calculate new mean and median for imputed data. 
@@ -85,7 +85,7 @@ total_diff <- sum(steps_by_day_i$steps) - sum(steps_by_day$steps)
 * The imputed data median is `r rmedian.i`
 * The difference between the non-imputed mean and imputed mean is `r mean_diff`
 * The difference between the non-imputed mean and imputed mean is `r med_diff`
-* The difference between total number of steps between imputed and non-imputed data is `r total_diff`. Thus, there were `r total_diff` more steps in the imputed data.
+* The difference between total number of steps between imputed and non-imputed data is `r total_diff`. As such, there were `r total_diff` more steps in the imputed data.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
